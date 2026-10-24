@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dally</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      background: #163b32;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .product {
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px #00000015;
+    }
+
+    .bag-image {
+      font-size: 60px;
+      padding: 20px;
+      background: #e8eee9;
+      border-radius: 8px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #167d45;
+    }
+
+    button {
+      background: #167d45;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+
+    /* Make the grid fit smaller screens */
+    @media (max-width: 650px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>The Dally</h1>
+    <p>One stop for every kind of bags</p>
+  </header>
+
+  <main class="products">
+
+    <div class="product">
+      <img
+       class="bag-photo"
+       src="schoolbagimage.jpg"
+       alt="School Backpack"
+       >
+      <h2>School Backpack</h2>
+      <p class="price">?699</p>
+      <button onclick="buyNow('school Bag', 699)">
+        Order Now
+      </button>
+    </div>
+
+    <div class="product">
+      <img
+       class="bag-photo"
+       src="laptopbag.jpg"
+       alt="laptop-bag"
+       >
+      <h2>Laptop Bag</h2>
+      <p class="price">?799</p>
+      <button onclick="buyNow('Laptop Bag', 799)">
+        Order Now
+      </button>
+    </div>
+     
+    <div class="product">
+      <img
+       class="bag-photo"
+       src="travelbag.jpg"
+       alt="travel-bag"
+       >
+      <h2>Travel Bag</h2>
+      <p class="price">?999</p>
+      <button onclick="buyNow('travel Bag', 999)">
+        Order Now
+      </button>
+      </div>
+
+  </main>
+
+  <script>
+ const shopNumber = "917863965045";
+
+  function buyNow(productName, price) {
+    const message =
+      "Hello! I want to order " +
+      productName +
+      " for Rs. " +
+      price +
+      ". Is it available?";
+
+    const whatsappURL =
+      "https://wa.me/" +
+      shopNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  }
+</script>
+
+</body>
+</html>
